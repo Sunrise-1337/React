@@ -9,7 +9,7 @@ function App() {
       <Header title={'Best React App Ever'}/>
       <div className='innerWrap'>
         <Menu />
-        <Content />
+        <Content link={'https://cutt.ly/wXttyMT'}/>
       </div>
     </div>
   );
