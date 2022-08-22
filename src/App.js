@@ -29,7 +29,7 @@ function App() {
         <button onClick={() => {buttonClick(name)}}>Check</button>
       </div>
       <TaskWrap func={setList} name={name} list={list}/>
-      <List list={list}/>
+      <List set={setList} name={name} list={list}/>
     </div>
   );
 }

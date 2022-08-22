@@ -4,8 +4,7 @@ function TaskWrap(props) {
   const [task, setTask] = useState('');
   const { func, name, list } = props;
   const taskClick = (task) => {
-    list.push({'task': task, 'done': false, 'id': list.length})
-    func(list)
+    func(el => [...el, {'task': task, 'done': false, 'id': list.length}])
     localStorage.setItem(name, JSON.stringify(list))
   };
 
