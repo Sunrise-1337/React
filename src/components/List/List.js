@@ -4,15 +4,15 @@ function List({set, name, list}) {
   const [arr, setArr] = useState([]);
 
   useEffect(() => {
-    console.log('yolo')
     setArr(list)
   }, [list])
 
-  const crossNSet = (ar, set, name, id) => {
-    ar[id].done = true;
-    console.log(ar)
-    localStorage.setItem(name, JSON.stringify(ar))
-    set(ar)
+  const crossNSet = (e, ar, set, name, id) => {
+    let ar2 = [...ar];
+    e.preventDefault()
+    ar2[id].done = true;
+    localStorage.setItem(name, JSON.stringify(ar2))
+    set(ar2)
   };
 
   return (
@@ -26,7 +26,7 @@ function List({set, name, list}) {
             </p>
             {!elem.done && <a 
               href="#" 
-              onClick={() => crossNSet(arr, set, name, elem.id)}>
+              onClick={e => crossNSet(e, arr, set, name, elem.id)}>
                 Done
               </a>}
           </li>
